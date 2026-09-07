@@ -6,3 +6,4 @@ dist
 .dev.vars
 bun.lock
 bun.lockb
+package-lock.json
