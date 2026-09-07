@@ -5,7 +5,16 @@ import { profile } from '@/data/profile'
 <template>
   <footer class="site-footer">
     <span>{{ profile.name }} · {{ profile.location }}</span>
-    <span>Vue 3 · PixiJS · Cloudflare Pages</span>
-    <a :href="profile.github">GitHub</a>
+    <a
+      id="footer-whatsapp"
+      :href="profile.whatsappUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="color: var(--gold-2)"
+    >
+      WhatsApp: {{ profile.phone }} ↗
+    </a>
+    <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
+    <a :href="profile.github" target="_blank" rel="noreferrer">GitHub</a>
   </footer>
 </template>

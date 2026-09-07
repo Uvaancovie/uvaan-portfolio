@@ -8,6 +8,10 @@ export const profile = {
   studio: 'Way2Fly Digital',
   degree: 'Bachelor in Application Development',
   headline: 'iGaming systems, .NET backends, PixiJS floors.',
+  phone: '081 0404 713',
+  phoneInternational: '+27 81 040 4713',
+  whatsappNumber: '27810404713',
+  whatsappUrl: 'https://wa.me/27810404713?text=Hi%20Uvaan,%20I%20saw%20your%20iGaming%20&%20.NET%20portfolio%20and%20would%20like%20to%20connect.',
   email: 'uvaancovenden@gmail.com',
   studioEmail: 'way2flyagency@gmail.com',
   github: 'https://github.com/Uvaancovie',
@@ -43,6 +47,13 @@ export const tracks = [
 
 export type TrackId = (typeof tracks)[number]['id'] | 'commerce'
 
+export interface SymbolAsset {
+  name: string
+  role: string
+  imageUrl: string
+  tag?: string
+}
+
 export interface Project {
   slug: string
   title: string
@@ -53,125 +64,135 @@ export interface Project {
   summary: string
   outcome: string
   href: string
+  liveUrl: string
+  repoUrl: string
+  format: string
+  lines: string
+  rtp?: string
+  volatility?: string
+  features: string[]
+  symbols: SymbolAsset[]
 }
 
 export const projects: Project[] = [
   {
     slug: 'eye-of-ra',
     title: 'Eye of Ra',
-    client: 'Personal / iGaming lab',
+    client: 'Personal / iGaming Studio',
     year: '2026',
     tracks: ['igaming', 'pixi'],
-    stack: ['TypeScript', 'Canvas', 'React', 'Slot math'],
+    stack: ['TypeScript', 'Canvas / WebGL', 'React', 'Slot RNG Math', 'Dynamic Audio FX'],
     summary:
-      'A 5-reel × 3-row Egyptian mythology slot with progressive jackpots, deity companions, and client/server-aware mathematics.',
-    outcome: 'Shipped as a high-fidelity playable client — the flagship of the iGaming studio track.',
-    href: 'https://github.com/Uvaancovie/Eye-of-Ra',
-  },
-  {
-    slug: 'white-label-slot',
-    title: 'White-label slot',
-    client: 'Way2Fly / operator kit',
-    year: '2026',
-    tracks: ['igaming', 'pixi'],
-    stack: ['PixiJS', 'Vite', 'Node', 'Shared math'],
-    summary:
-      'Embeddable reel engine with a spin service, session store, and a shared config so a brand can drop in a cabinet without forking the math.',
-    outcome: 'The architecture I want to take into licensed B2B work: client art, server authority, one contract.',
-    href: 'https://github.com/Uvaancovie/white-label-slot',
+      'A 5-reel × 3-row Egyptian mythology slot game engineered with progressive jackpots, divine companion mechanics, cascading line evaluations, and server-authoritative math models.',
+    outcome:
+      'Shipped as a high-fidelity playable slot client featuring deity powers, scatter bonuses, and 20-winline evaluations.',
+    href: 'https://eye-of-ra-zeta.vercel.app/',
+    liveUrl: 'https://eye-of-ra-zeta.vercel.app/',
+    repoUrl: 'https://github.com/Uvaancovie/Eye-of-Ra',
+    format: '5 Reels × 3 Rows',
+    lines: '20 Fixed Winlines',
+    rtp: '96.4% RTP',
+    volatility: 'High Volatility',
+    features: [
+      'Divine Deity Companions: Ra, Anubis, and Cleopatra with active gameplay triggers',
+      '20 Fixed Evaluated Paylines with Staggered Reel Spin and Deceleration Physics',
+      'Golden Sphinx Expanding Wild with Multiplier Stacks',
+      'Golden Sarcophagus Mystery Reel Respins & Relic Scatters',
+      'Progressive Jackpot Tiers with Real-time Win Interpolation',
+    ],
+    symbols: [
+      {
+        name: 'Ra — Sun God',
+        role: 'Wild & Jackpot Deity',
+        tag: 'Deity',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-icons/ra.png',
+      },
+      {
+        name: 'Anubis — Guide',
+        role: 'Scatter Trigger',
+        tag: 'Deity',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-icons/anubis.png',
+      },
+      {
+        name: 'Cleopatra — Sovereign',
+        role: 'High Tier Pay',
+        tag: 'Deity',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-icons/cleopatra.png',
+      },
+      {
+        name: 'Golden Sphinx',
+        role: 'Expanding Wild',
+        tag: 'Wild',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/golden-sphinx-symbol.png',
+      },
+      {
+        name: 'Golden Sarcophagus',
+        role: 'Mystery Scatter / High Pay',
+        tag: 'Relic',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/golden-sarcophagus-symbol-bg-removebg-preview(1).png',
+      },
+    ],
   },
   {
     slug: 'covies-slots',
     title: 'Covies Slots',
-    client: 'Personal',
+    client: 'Personal / iGaming & FinTech Suite',
     year: '2026',
-    tracks: ['igaming'],
-    stack: ['TypeScript', 'React', 'Supabase', 'Web Audio'],
-    summary:
-      'A 5×5, 30-line video slot simulator with a custom engine, synthesized audio, and a PostgreSQL backend.',
-    outcome: 'Proof I can own the full loop: reel feel, paylines, persistence — not just a CSS animation.',
-    href: 'https://github.com/Uvaancovie/covies-slots',
-  },
-  {
-    slug: 'raf-pnp',
-    title: 'RAF case desk',
-    client: 'Pather & Pather Attorneys',
-    year: '2026',
-    tracks: ['fintech', 'dotnet'],
-    stack: ['ASP.NET Core', 'Razor Pages', 'C#', 'SQL Server'],
-    summary:
-      'Road Accident Fund case management from intake through settlement — the kind of ledger work FinTech actually looks like in South Africa.',
-    outcome: 'A production-shaped legal ops system, not a CRUD tutorial.',
-    href: 'https://github.com/Uvaancovie/raf-pnp',
-  },
-  {
-    slug: 'sa-funeral-api',
-    title: 'SA Funeral API',
-    client: 'South African Funeral Supplies',
-    year: '2026',
-    tracks: ['dotnet', 'commerce'],
-    stack: ['ASP.NET Core', '.NET 8', 'C#'],
-    summary:
-      'Catalog and administration API that replaced serverless functions with a full ASP.NET Core backend.',
-    outcome: 'The .NET muscle I am building toward iGaming and FinTech services.',
-    href: 'https://github.com/Uvaancovie/sa-funeral-api',
-  },
-  {
-    slug: 'safs-catalog',
-    title: 'SAFS catalog',
-    client: 'South African Funeral Supplies',
-    year: '2026',
-    tracks: ['commerce'],
-    stack: ['TypeScript', 'Angular', 'Supabase', 'Brevo'],
-    summary:
-      'Premium funeral-industry catalog for caskets, equipment, and requisites across South Africa and the continent.',
-    outcome: 'Day-job product: enterprise commerce, newsletters, and the unglamorous work that keeps a real company selling.',
-    href: 'https://github.com/Uvaancovie/sa-funerals-catalog',
-  },
-  {
-    slug: 'municipality-api',
-    title: 'Municipality API',
-    client: 'Academic / civic',
-    year: '2025',
-    tracks: ['dotnet'],
-    stack: ['C#', 'ASP.NET', 'SQL Server'],
-    summary: 'Civic services API in C# — stored procedures, indexes, and the SSMS-to-API path I train on.',
-    outcome: 'Backend discipline before the flashy client.',
-    href: 'https://github.com/Uvaancovie/municipality-api-net-csharp',
-  },
-  {
-    slug: 'pro-graphics',
-    title: 'Pro Graphics',
-    client: 'Pro Graphics',
-    year: '2026',
-    tracks: ['commerce'],
-    stack: ['Vite', 'React', 'Supabase', 'Playwright'],
-    summary:
-      'Marketing and lead-gen site for a print and signage house sitting between high-volume copy shops and consultative signage firms.',
-    outcome: 'Graphic production literacy plus a conversion-minded storefront.',
-    href: 'https://github.com/Uvaancovie/pro-graphics',
-  },
-  {
-    slug: 'house-of-parlay',
-    title: 'House of Parlay',
-    client: 'House of Parlay',
-    year: '2026',
-    tracks: ['commerce'],
-    stack: ['Vite', 'TypeScript', 'Catalog'],
-    summary: 'Luxury jewellery storefront — product photography, catalog discipline, and a quieter kind of wager.',
-    outcome: 'Luxury UI that still has to sell SKUs.',
-    href: 'https://github.com/Uvaancovie/house-of-parlay',
-  },
-  {
-    slug: 'casino-api',
-    title: 'Covies Casino API',
-    client: 'Personal',
-    year: '2025',
     tracks: ['igaming', 'fintech'],
-    stack: ['Express', 'MongoDB', 'Mongoose'],
-    summary: 'Session, wallet, and game-state API for casino clients — the ledger behind the reels.',
-    outcome: 'Backend-first iGaming: if the wallet is wrong, the art does not matter.',
-    href: 'https://github.com/Uvaancovie/covies-casino-api',
+    stack: ['TypeScript', 'React', 'Supabase / PostgreSQL', 'Web Audio API', 'State Ledger'],
+    summary:
+      'A dynamic 5×5, 30-payline video slot simulator featuring custom reel animation physics, interactive bonus chest mini-games, synthesized audio, and a real-time PostgreSQL session ledger.',
+    outcome:
+      'Complete casino loop: reel feel, 30 evaluated paylines, interactive bonus pick rounds, and real-time ledger persistence.',
+    href: 'https://covies-slots.vercel.app/',
+    liveUrl: 'https://covies-slots.vercel.app/',
+    repoUrl: 'https://github.com/Uvaancovie/covies-slots',
+    format: '5 Reels × 5 Rows',
+    lines: '30 Evaluated Paylines',
+    rtp: '95.8% RTP',
+    volatility: 'Medium-High',
+    features: [
+      'Interactive Bonus Treasure Chest Vault Mini-Game & Free Spins',
+      'Mystic Lion High-Paying Wild Predator Symbol',
+      '30 Evaluated Paylines with Multi-Line Highlight Animations',
+      'Web Audio Real-Time Reel Clack & Win Jingle Synthesis',
+      'PostgreSQL / Supabase Session Balance & History Ledger',
+    ],
+    symbols: [
+      {
+        name: 'Treasure Chest',
+        role: 'Bonus Vault / Free Spins',
+        tag: 'Bonus',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/bonus-treasure-chest.jpg',
+      },
+      {
+        name: 'Mystic Lion',
+        role: 'Top Tier Wild Predator',
+        tag: 'Wild',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/mystic-lion-symbol.jpg',
+      },
+      {
+        name: 'Golden Sphinx',
+        role: 'Multiplier Wild',
+        tag: 'Wild',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/golden-sphinx-symbol.png',
+      },
+      {
+        name: 'Golden Sarcophagus',
+        role: 'Relic Scatter',
+        tag: 'Scatter',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/golden-sarcophagus-symbol-bg-removebg-preview(1).png',
+      },
+    ],
   },
 ]
 

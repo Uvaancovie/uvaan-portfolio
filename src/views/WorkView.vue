@@ -5,12 +5,10 @@ import { projects } from '@/data/profile'
 import type { TrackId } from '@/data/profile'
 
 const filters: Array<{ id: 'all' | TrackId; label: string }> = [
-  { id: 'all', label: 'All' },
-  { id: 'igaming', label: 'iGaming' },
-  { id: 'fintech', label: 'FinTech' },
-  { id: 'dotnet', label: '.NET' },
-  { id: 'pixi', label: 'PixiJS' },
-  { id: 'commerce', label: 'Commerce' },
+  { id: 'all', label: 'All Cases' },
+  { id: 'igaming', label: 'iGaming Engines' },
+  { id: 'pixi', label: 'PixiJS & Canvas' },
+  { id: 'fintech', label: 'FinTech & Ledgers' },
 ]
 
 const active = ref<(typeof filters)[number]['id']>('all')
@@ -22,13 +20,13 @@ const visible = computed(() =>
 <template>
   <main class="section">
     <div class="wrap">
-      <p class="kicker">Archive</p>
+      <p class="kicker">Archive / Case Studies</p>
       <h1 class="serif" style="font-size: clamp(2.4rem, 6vw, 4.2rem); margin: 0.3rem 0 0.8rem">
-        Work that already exists.
+        Selected Slot Engines & Architecture.
       </h1>
-      <p class="note" style="max-width: 46ch; margin-bottom: 1.6rem">
-        Public GitHub cases. The through-line is shipping: slots, legal ops, funeral commerce,
-        and the APIs underneath. Filter by the floor I am advancing onto.
+      <p class="note" style="max-width: 58ch; margin-bottom: 1.6rem">
+        Comprehensive playable slot cases with server-authoritative reel physics, interactive bonus vaults,
+        rendered symbol asset galleries, and real-time ledger persistence.
       </p>
       <div class="filters">
         <button
@@ -44,10 +42,9 @@ const visible = computed(() =>
       </div>
       <div class="project-grid">
         <ProjectCard
-          v-for="(project, index) in visible"
+          v-for="project in visible"
           :key="project.slug"
           :project="project"
-          :featured="index === 0"
         />
       </div>
     </div>

@@ -1,36 +1,13 @@
 <script setup lang="ts">
-import PixiStage from '@/components/PixiStage.vue'
+import HeroSection from '@/components/HeroSection.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
-import { profile, projects, tracks, stackGroups } from '@/data/profile'
-
-const featured = projects.slice(0, 5)
+import TechnicalExpertise from '@/components/TechnicalExpertise.vue'
+import { projects, tracks, stackGroups } from '@/data/profile'
 </script>
 
 <template>
   <main>
-    <section class="hero">
-      <div class="hero-canvas">
-        <PixiStage />
-      </div>
-      <div class="hero-copy wrap">
-        <p class="kicker">{{ profile.location }} · {{ profile.role }}</p>
-        <h1>Uvaan<br /><em>Covenden</em></h1>
-        <p class="hero-lead">
-          I build the systems behind the spin — PixiJS cabinets, ASP.NET APIs, and
-          product UI with the same discipline I use on a live warehouse catalog.
-          iGaming, FinTech, and .NET are the floor I am advancing onto.
-        </p>
-        <div class="hero-meta">
-          <span><b>Now</b> {{ profile.employer }}</span>
-          <span><b>Studio</b> {{ profile.studio }}</span>
-          <span><b>Degree</b> {{ profile.degree }}</span>
-        </div>
-        <div class="cta-row">
-          <router-link class="btn" to="/studio">Spin the floor</router-link>
-          <router-link class="btn ghost" to="/work">Selected work</router-link>
-        </div>
-      </div>
-    </section>
+    <HeroSection />
 
     <section class="section">
       <div class="wrap">
@@ -50,18 +27,20 @@ const featured = projects.slice(0, 5)
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0">
+    <!-- Technical Expertise & Architecture Deep Dive -->
+    <TechnicalExpertise />
+
+    <section class="section" style="padding-top: 3.5rem">
       <div class="wrap">
         <div class="section-head">
           <div>
             <p class="kicker">02 / Work</p>
             <h2>Selected cases.</h2>
           </div>
-          <router-link class="btn ghost" to="/work">All projects</router-link>
+          <router-link class="btn ghost" to="/work">View full archive</router-link>
         </div>
         <div class="project-grid">
-          <ProjectCard :project="featured[0]" featured />
-          <ProjectCard v-for="project in featured.slice(1)" :key="project.slug" :project="project" />
+          <ProjectCard v-for="project in projects" :key="project.slug" :project="project" />
         </div>
       </div>
     </section>
