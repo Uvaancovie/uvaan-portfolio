@@ -7,7 +7,7 @@
     "dev": "vite --port 3000 --host 0.0.0.0",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name uvaan-portfolio"
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name uvaan-portfolio"
   },
   "dependencies": {
     "pixi.js": "^8.13.2",
@@ -19,7 +19,6 @@
     "@vitejs/plugin-vue": "^6.0.1",
     "typescript": "~5.9.2",
     "vite": "^7.1.5",
-    "vue-tsc": "^3.0.7",
-    "wrangler": "^4.34.0"
+    "vue-tsc": "^3.0.7"
   }
 }
