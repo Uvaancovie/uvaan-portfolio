@@ -10,7 +10,7 @@ import { profile, timeline } from '@/data/profile'
       </div>
       <div>
         <p class="kicker">{{ profile.age }} · {{ profile.location }}</p>
-        <h1>A junior programmer who already runs a floor.</h1>
+        <h1>When I am doing iGaming, I am in a flow state — it is the only niche where I can be my most creative.</h1>
         <p>
           LinkedIn is gated to scrapers, so this site is built from the public record:
           GitHub <b style="color: var(--gold-2)">@{{ profile.githubUser }}</b>, the SAFS
