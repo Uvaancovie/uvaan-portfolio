@@ -1,7 +1,7 @@
 import { Application, Container, Graphics, Text } from 'pixi.js'
 import type { TextStyleOptions } from 'pixi.js'
 
-export type CabinetTheme = 'eye-of-ra' | 'covies-slots'
+export type CabinetTheme = 'eye-of-ra' | 'covies-slots' | 'springbok-rush'
 
 interface Reel {
   container: Container
@@ -20,6 +20,15 @@ const THEME_CONFIGS: Record<CabinetTheme, {
   title: string
   subtitle: string
 }> = {
+  'springbok-rush': {
+    felt: 0x0f2b1d,
+    primary: 0xffd700, // Springbok Gold
+    secondary: 0x007a4d, // SA Green
+    accent: 0xffb703, // Amber Flare
+    symbols: [0xffd700, 0x007a4d, 0xffb703, 0x8dffc9, 0xf0d9a0, 0xc9a46a],
+    title: 'SPRINGBOK RUSH  ·  SA WHITE-LABEL',
+    subtitle: 'RTP 96.2%   20 WINLINES   ZAR CENTS MATH',
+  },
   'eye-of-ra': {
     felt: 0x16241c,
     primary: 0xc9a46a, // Egyptian Gold

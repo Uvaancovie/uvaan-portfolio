@@ -8,8 +8,8 @@ import { playReelClack, playWinChime } from '@/utils/audioSynth'
 
 const stage = ref<{ spin: () => void; setTheme: (theme: CabinetTheme) => void } | null>(null)
 
-// Cabinet Theme selection: 'eye-of-ra' or 'covies-slots'
-const selectedSlug = ref<'eye-of-ra' | 'covies-slots'>('eye-of-ra')
+// Cabinet Theme selection: 'springbok-rush', 'eye-of-ra' or 'covies-slots'
+const selectedSlug = ref<'springbok-rush' | 'eye-of-ra' | 'covies-slots'>('springbok-rush')
 const currentCabinetTheme = computed<CabinetTheme>(() => selectedSlug.value)
 
 const currentProject = computed(() =>
@@ -24,7 +24,7 @@ const lastWinMessage = ref<string>('Ready for spin · Demo Session')
 const spinCount = ref<number>(0)
 const simulatedBalance = ref<number>(1000)
 
-function selectCabinet(slug: 'eye-of-ra' | 'covies-slots') {
+function selectCabinet(slug: 'springbok-rush' | 'eye-of-ra' | 'covies-slots') {
   selectedSlug.value = slug
   if (stage.value) {
     stage.value.setTheme(slug)
@@ -141,6 +141,40 @@ const visionPhases = [
 
         <!-- Cabinet Selection Cards -->
         <div class="cabinet-selector-grid">
+          <!-- Card 0: Springbok Rush (NEW) -->
+          <div
+            id="card-select-springbok-rush"
+            class="cabinet-card featured-springbok"
+            :class="{ active: selectedSlug === 'springbok-rush' }"
+            @click="selectCabinet('springbok-rush')"
+          >
+            <div class="card-glow-indicator"></div>
+            <div class="cabinet-card-top">
+              <span class="cabinet-badge gold">🇿🇦 SA White-Label (NEW)</span>
+              <span class="cabinet-rtp">96.2% RTP · 20 Lines</span>
+            </div>
+            <h2 class="cabinet-title serif">Springbok Rush</h2>
+            <p class="cabinet-desc">
+              Configurable 5×3 slot shell built for South African B2B operators with ZAR cents integer math, ?operatorId= embed params, and real-time EN ↔ isiZulu localization.
+            </p>
+            <div class="cabinet-card-foot">
+              <span class="theme-status">
+                <span class="status-dot"></span>
+                {{ selectedSlug === 'springbok-rush' ? 'Active on Floor' : 'Click to Load Cabinet' }}
+              </span>
+              <a
+                id="link-live-springbok-rush"
+                class="card-external-link highlight-link"
+                href="https://white-label-slot.igamingdev.workers.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                @click.stop
+              >
+                Launch Game ↗
+              </a>
+            </div>
+          </div>
+
           <!-- Card 1: Eye of Ra -->
           <div
             id="card-select-eye-of-ra"
@@ -155,7 +189,7 @@ const visionPhases = [
             </div>
             <h2 class="cabinet-title serif">Eye of Ra</h2>
             <p class="cabinet-desc">
-              Egyptian mythology slot with progressive jackpots, divine companion mechanics (Ra, Anubis, Cleopatra), and expanding golden sphinx wilds.
+              Egyptian mythology slot with progressive jackpots, divine companion mechanics (Ra, King Tut, Temple Guardian), and expanding golden sphinx wilds.
             </p>
             <div class="cabinet-card-foot">
               <span class="theme-status">
@@ -421,8 +455,8 @@ const visionPhases = [
 /* Cabinet Selector Grid */
 .cabinet-selector-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.35rem;
 }
 
 .cabinet-card {

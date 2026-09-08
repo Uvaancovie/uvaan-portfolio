@@ -29,6 +29,15 @@ defineProps<{ project: Project; featured?: boolean }>()
       <p class="card-summary">{{ project.summary }}</p>
     </header>
 
+    <!-- Project Banner Image (if available) -->
+    <div v-if="project.bannerImage" class="project-banner-wrap">
+      <img :src="project.bannerImage" :alt="`${project.title} Cabinet Preview`" class="project-banner-img" loading="lazy" />
+      <div class="banner-overlay-badge">
+        <span class="banner-badge-dot"></span>
+        <span>South African White-Label Engine · B2B Operator Demo</span>
+      </div>
+    </div>
+
     <!-- Symbol & Deity Asset Gallery -->
     <div v-if="project.symbols && project.symbols.length" class="symbols-section">
       <div class="symbols-header">
@@ -260,6 +269,57 @@ defineProps<{ project: Project; featured?: boolean }>()
   font-size: 1.02rem;
   font-weight: 300;
   max-width: 62ch;
+}
+
+/* Project Banner */
+.project-banner-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 380px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(8, 9, 12, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-banner-img {
+  transform: scale(1.02);
+}
+
+.banner-overlay-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mint);
+  background: rgba(8, 9, 12, 0.85);
+  border: 1px solid rgba(141, 255, 201, 0.4);
+  padding: 0.3rem 0.7rem;
+  backdrop-filter: blur(8px);
+}
+
+.banner-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 6px var(--mint);
 }
 
 /* Symbol Asset Gallery */

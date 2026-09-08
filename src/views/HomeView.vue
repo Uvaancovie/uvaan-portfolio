@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue'
+import B2bShowcase from '@/components/B2bShowcase.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 import TechnicalExpertise from '@/components/TechnicalExpertise.vue'
 import { projects, tracks, stackGroups } from '@/data/profile'
@@ -8,6 +9,9 @@ import { projects, tracks, stackGroups } from '@/data/profile'
 <template>
   <main>
     <HeroSection />
+
+    <!-- B2B Enterprise & iGaming Dual Capability Showcase -->
+    <B2bShowcase />
 
     <section class="section">
       <div class="wrap">

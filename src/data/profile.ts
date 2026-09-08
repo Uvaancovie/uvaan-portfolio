@@ -70,11 +70,77 @@ export interface Project {
   lines: string
   rtp?: string
   volatility?: string
+  bannerImage?: string
   features: string[]
   symbols: SymbolAsset[]
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'springbok-rush',
+    title: 'Springbok Rush',
+    client: 'South African White-Label Slot Kit / B2B Operator Demo',
+    year: '2026',
+    tracks: ['igaming', 'pixi', 'fintech'],
+    stack: ['PixiJS 8', 'TypeScript', 'Cloudflare Workers / Express', 'ZAR Cents Math', 'Web Audio API', 'i18n (EN / isiZulu)'],
+    summary:
+      'Configurable 5-reel × 3-row slot engine engineered for the South African iGaming market. Built with server-authoritative win evaluations, strict ZAR cents integer math to prevent floating point drift, operatorId & gameId embed parameters, and real-time bilingual English ↔ isiZulu localization.',
+    outcome:
+      'Live B2B cabinet deployed on Cloudflare Workers featuring dynamic paytables, staggered reel stops, coin burst celebrations, and 18+ Responsible Gambling compliance.',
+    href: 'https://white-label-slot.igamingdev.workers.dev/',
+    liveUrl: 'https://white-label-slot.igamingdev.workers.dev/',
+    repoUrl: 'https://github.com/Uvaancovie/sa-white-label-slot',
+    format: '5 Reels × 3 Rows',
+    lines: '20 Fixed Winlines',
+    rtp: '96.2% RTP',
+    volatility: 'Medium-High',
+    bannerImage:
+      'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/slot-projects/springbok-slot.png',
+    features: [
+      'B2B White-Label Architecture: ?operatorId= & ?gameId= embed query configuration for licensed SA operators',
+      'Strict ZAR Cents Integer Math ensuring zero floating-point ledger rounding drift',
+      'Bilingual Dynamic Localization: English ↔ isiZulu switchable in real-time',
+      'Staggered Reel Spin Deceleration Physics with Payline Multi-Highlight Animations',
+      'Responsible Gambling Compliant: 18+ badge, session clock, bet limits, and autoplay stop criteria',
+    ],
+    symbols: [
+      {
+        name: 'Springbok Golden Crest',
+        role: 'Top Tier Wild & Scatter',
+        tag: 'Wild',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/slot-projects/springbok-slot.png',
+      },
+      {
+        name: 'King Tut',
+        role: 'Pharaoh Sovereign High Pay',
+        tag: 'High Pay',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-icons/king-tut.png',
+      },
+      {
+        name: 'Temple Guardian',
+        role: 'Protector Multiplier Wild',
+        tag: 'Deity',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-icons/guardian.png',
+      },
+      {
+        name: 'Mystic Lion',
+        role: 'Predator Wild Symbol',
+        tag: 'Wild',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/mystic-lion-symbol.jpg',
+      },
+      {
+        name: 'Treasure Chest',
+        role: 'Bonus Vault Scatter',
+        tag: 'Bonus',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-symbols/bonus-treasure-chest.jpg',
+      },
+    ],
+  },
   {
     slug: 'eye-of-ra',
     title: 'Eye of Ra',
@@ -101,6 +167,20 @@ export const projects: Project[] = [
       'Progressive Jackpot Tiers with Real-time Win Interpolation',
     ],
     symbols: [
+      {
+        name: 'King Tut',
+        role: 'Pharaoh Sovereign High Pay',
+        tag: 'High Pay',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-icons/king-tut.png',
+      },
+      {
+        name: 'Temple Guardian',
+        role: 'Protector Multiplier Wild',
+        tag: 'Wild',
+        imageUrl:
+          'https://vydleiyxfqrhxoddbcpi.supabase.co/storage/v1/object/public/gambling-icons/guardian.png',
+      },
       {
         name: 'Ra — Sun God',
         role: 'Wild & Jackpot Deity',
