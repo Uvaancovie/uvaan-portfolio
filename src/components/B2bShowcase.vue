@@ -204,7 +204,7 @@ const filteredCases = computed(() => {
           </div>
 
           <!-- Actions Row -->
-          <div v-if="item.liveLink || item.repoLink" class="card-actions">
+          <div v-if="item.liveLink || item.repoLink || item.id === 'springbok-white-label'" class="card-actions">
             <a
               v-if="item.liveLink"
               :href="item.liveLink"
@@ -215,6 +215,14 @@ const filteredCases = computed(() => {
               <span>{{ item.liveLabel || 'View Live' }}</span>
               <span>↗</span>
             </a>
+            <router-link
+              v-if="item.id === 'springbok-white-label'"
+              to="/shop"
+              class="btn-b2b shop-cta-btn"
+            >
+              <span>Buy Source ($149 – $999)</span>
+              <span>↗</span>
+            </router-link>
             <a
               v-if="item.repoLink"
               :href="item.repoLink"
@@ -536,6 +544,18 @@ const filteredCases = computed(() => {
 
 .btn-b2b.live-btn:hover {
   background: var(--gold-2);
+}
+
+.btn-b2b.shop-cta-btn {
+  background: rgba(141, 255, 201, 0.12);
+  color: var(--mint);
+  border: 1px solid rgba(141, 255, 201, 0.4);
+  font-weight: 600;
+}
+
+.btn-b2b.shop-cta-btn:hover {
+  background: rgba(141, 255, 201, 0.22);
+  border-color: var(--mint);
 }
 
 .btn-b2b.repo-btn {
